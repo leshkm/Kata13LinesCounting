@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+wrapper {
+    gradleVersion = '6.5'
+}
+
+group 'ua.mohylin'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+}
+
+apply plugin: 'application'
+
+mainClassName = 'ua.mohylin.kata13.JavaCodeLinesCountingApplication'
+
+application {
+    mainClass = mainClassName
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}
