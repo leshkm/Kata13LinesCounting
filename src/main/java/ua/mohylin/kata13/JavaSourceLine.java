@@ -136,11 +136,11 @@ public class JavaSourceLine implements DebugLogger {
       }
 
       if (!hasCode) {
-        debug("(code starts at " + lineIterator.getOffset() + ")");
+        // debug("(code starts at " + lineIterator.getOffset() + ")");
       }
 
       this.hasCode = true;
     }
-    debug(String.valueOf(lineIterator.getOffset()));
+    // debug(String.valueOf(lineIterator.getOffset()));
   }
 }
