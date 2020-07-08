@@ -19,7 +19,7 @@ public class JavaLinesCountingTaskTest {
   @CsvSource({"source1_3_lines.java.txt,3", "source2_5_lines.java.txt,5"})
   void test1(String testFileName, int expectedCount) throws IOException {
     InputStream test = getTest(testFileName);
-    long countLines = new JavaLinesCountingTask().countLines(test);
+    long countLines = new JavaLinesCountingTask().countLinesWithCode(test);
     assertEquals(expectedCount, countLines);
   }
 }
