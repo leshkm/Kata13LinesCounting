@@ -1,12 +1,24 @@
 package ua.mohylin.kata13;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.Objects;
+import org.apache.commons.lang3.StringUtils;
 
 public class JavaLinesCountingTask implements DebugLogger {
+
+  private final File file;
+  private final int level;
+
+  public JavaLinesCountingTask(File file, int level) {
+    this.file = file;
+    this.level = level;
+  }
+
+  public void run() throws IOException {
+    long count = countLinesWithCode(new FileInputStream(file));
+    String prefix = StringUtils.repeat("  ", level - 1);
+    System.out.println(String.format("%s%s : %d", prefix, file.getName(), count));
+  }
 
   public long countLinesWithCode(InputStream inputStream) throws IOException {
     Objects.requireNonNull(inputStream);

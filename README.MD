@@ -8,4 +8,4 @@ http://codekata.com/kata/kata13-counting-code-lines/
     
 ####How to run
 
-    gradlew run [path_to_file_or_folder_with_code]
+    gradlew run --args [path_to_file_or_folder_with_code]
